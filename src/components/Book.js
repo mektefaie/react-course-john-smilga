@@ -1,20 +1,11 @@
 const Book = props => {
-  // if passing the entire object as a prop, either use:
-  // const Book = ({ book: { img, title, author } }) => {
-  // or
-  // const { img, title, author } = props.book
-  // or
-
-  const { img, title, author } = props
-  const displayTitle = () => {
-    console.log(title)
-  }
+  const { img, title, author, getBook, id } = props
 
   return (
     <article className='book'>
       <img src={img} alt={title} />
       <h2>{title}</h2>
-      <button onClick={displayTitle}>display title</button>
+      <button onClick={() => getBook(id)}>Click me</button>
       <h4>{author} </h4>
     </article>
   )

@@ -19,10 +19,14 @@ const books = [
 ]
 
 function BookList() {
+  const getBook = id => {
+    console.log(books.find(book => book.id === id))
+  }
+
   return (
     <section className='booklist'>
       {books.map(book => {
-        return <Book {...book} key={book.id} />
+        return <Book {...book} key={book.id} getBook={getBook} />
       })}
     </section>
   )
