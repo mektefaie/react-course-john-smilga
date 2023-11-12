@@ -22,7 +22,6 @@ function BookList() {
   return (
     <section className='booklist'>
       {books.map(book => {
-        // passing the entire object
         return <Book {...book} key={book.id} />
       })}
     </section>
